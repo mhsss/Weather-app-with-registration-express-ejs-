@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body a+a {
+    margin-left: 25px;
+}
+a {
+    margin-bottom: 50px;
+}
+.weather__inner {
+    max-width: 250px;
+    width: 100%;
+    border: 1px solid grey;
+    text-align: center;
+    padding: 10px;
+}
+.fav__inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+.favoritCity__inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+.favoritCity {
+    border: 1px solid #000;
+    text-align: center;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <a href="/users/logout">Logout</a>
+    <a href="http://localhost:4000/fav">UR FAVORITES</a>
+
+    <form action="/users/main" method="POST">
+        <input type="text" name="city_name" placeholder="city">
+        <button>add city</button>
+    </form>
+
+    <% if(weather) { %>
+
+  <% if(messages.success_msg) { %>
+        <li><%= messages.success_msg %></li>
+        <%}%>
+
+    <div class='weather__inner'>
+        <p>City : <%=weather.city%></p>
+        <p>Temperature : <%=weather.temp%></p>
+        <figure class='image is-50x50'>
+            <img src='http://openweathermap.org/img/w/<%=weather.icon %>.png' alt='image'>
+        </figure>
+        <p>Description : <%=weather.descr%> </p>
+
+        <button onclick=addToFav()> Add city to favorites </button>
+    </div>
+
+    <% } else { %>
+    <h1><%=text%></h1>
+    <% } %>
+
+   
+
+</body>
+
+<script>
+
+    let url = 'http://localhost:4000/addtofav'
+
+    const addToFav = () => {
+        fetch(url)
+    }
+
+</script>
+
+</html>

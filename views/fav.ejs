@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="/users/logout">Logout</a>
+    <a class="back__link" href="/users/main">Back to weather page</a>
+
+
+    <% if (cities) {%>
+    <div class="fav__inner weather__card">
+        <% for (city of cities) { %>
+        <div class='weather__inner'>
+            <p>City : <%=city.city%> </p>
+            <p>Temperature : <%=city.temp%> </p>
+            <figure class='image is-50x50'>
+                <img src='http://openweathermap.org/img/w/<%=city.icon %>.png' alt='image'>
+            </figure>
+            <p>Description : <%=city.descr%> </p>
+            <a href="http://localhost:4000/city/<%=city.city%>">Full description</a>
+        </div>
+        <%}%>
+    </div>
+    <% } %>
+   
+        
+    </body>
+
+</html>
+
+
+
+
